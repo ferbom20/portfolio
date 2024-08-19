@@ -6,4 +6,4 @@
   <li>$ git clone https://github.com/cobiwave/simplefolio</li>
 </ul>
 
-<img src="./assets/images/avatar-1.png">
+<img src="./assets/images/portada.png">
