@@ -1,7 +1,6 @@
-<ul>
-  <li>Hi there</li>
-</ul>
+<h1>Personal Portfolio 💥</h1>
 
+<hr>
 
 <h1>Getting Started</h1>
 <ul>
