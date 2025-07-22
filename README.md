@@ -1,9 +1,16 @@
 <h1>Personal Portfolio 💥</h1>
+<img src="./assets/images/portada.png">
 
-<h1>Getting Started</h1>
+<br>
+
+<h1>Built With</h1>
+<hr>
 <ul>
-  <li># Clone the repository</li>
-  <li>$ git clone https://github.com/ferbom20/portfolio.git</li>
+  <li>HTML 5</li>
+  <li>JS</li>
+  <li>CSS</li>
 </ul>
 
-<img src="./assets/images/portada.png">
+<br>
+<h1>Getting Started</h1>
+<p>Clone down this repository. You will need node.js and git installed globally on your machine.</p>
