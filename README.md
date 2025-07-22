@@ -2,7 +2,6 @@
 <img src="./assets/images/portada.png">
 
 <h1>Built With</h1>
-<hr>
 <ul>
   <li>HTML 5</li>
   <li>JS</li>
