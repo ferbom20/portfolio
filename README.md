@@ -1,5 +1,5 @@
 <h1>Personal Portfolio 💥</h1>
-<img src="./assets/images/portada.png">
+<img src="portada.png">
 
 <h1>Built With</h1>
 <ul>
