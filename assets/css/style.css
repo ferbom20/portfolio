@@ -1716,7 +1716,7 @@ textarea.form-input::-webkit-resizer {
 
   .project-img,
   .blog-banner-box {
-    border-radius: 16px;
+    border-radius: 16px 16px 0 0;
   }
 
   .blog-posts-list {
@@ -2161,5 +2161,6 @@ textarea.form-input::-webkit-resizer {
   .timeline-text {
     max-width: 700px;
   }
+
 
 }
