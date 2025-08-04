@@ -222,7 +222,7 @@ document.addEventListener('DOMContentLoaded', () => {
         scrollTrigger: {
             trigger: ".video-section-content",
             start: "top 80%", // Cuando la parte superior del contenido entra en el 80% del viewport
-            markers: true,
+            //markers: true,
             toggleActions: "play none none none"
         }
     });
