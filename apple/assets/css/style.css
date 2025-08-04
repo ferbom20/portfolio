@@ -1,0 +1,1309 @@
+/* Estilos generales y reset básico (sin cambios) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'PingFangSCLight';
+    src: url('../ttf/pingfang-sc-light.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    overflow-x: hidden;
+    /* Previene scroll horizontal no deseado */
+}
+
+/* Navbar (sin cambios significativos) */
+.navbar-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 10px 20px;
+    height: 44px;
+}
+
+.navbar-left .nav-item {
+    font-weight: 600;
+}
+
+.navbar-left img {
+    width: 90px;
+    height: 20px;
+}
+
+.nav-item {
+    color: #333;
+    text-decoration: none;
+    font-size: 14px;
+    padding: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.nav-item:hover {
+    color: #007aff;
+}
+
+.navbar-right {
+    display: flex;
+    align-items: center;
+}
+
+.navBottom {
+    width: 100%;
+    height: 40px;
+    background-color: black;
+}
+
+.buy-button {
+    background-color: #007aff;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    padding: 5px 15px;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: 15px;
+}
+
+.buy-button:hover {
+    background-color: #005bb5;
+}
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 85vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    /* **CAMBIO: Alinear al inicio para que el texto esté más arriba** */
+    align-items: center;
+    text-align: center;
+    padding-top: 44px;
+    /* Compensar la altura del navbar fijo */
+    overflow: hidden;
+}
+
+.hero-content {
+    z-index: 10;
+    margin-top: 15vh;
+    width: 100%;
+    margin-bottom: 20px;
+    background-image: url(../img/phone-bg.webp);
+    height: 630px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right bottom;
+}
+
+.hero-content img {
+    height: 22px;
+}
+
+.hero-content h1 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.hero-content h2 {
+    font-size: 80px;
+    /* **CAMBIO: Agrandar mucho el tamaño de la fuente** */
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    font-family: 'PingFangSCLight', sans-serif;
+}
+
+/* .hero-background-image {
+    position: absolute;
+    top: 57%;
+    left: 72%;
+    transform: translate(-50%, -50%);
+    width: 107%;
+    height: 100%;
+    background-image: url(../img/phone-bg.webp);
+    background-size: cover;
+
+} */
+
+/* Media queries para responsividad (ajustes básicos) */
+@media (max-width: 1200px) {
+    .hero-content{
+        height: 500px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 10px;
+    }
+
+    .nav-item {
+        font-size: 12px;
+        padding: 0 5px;
+    }
+
+    .buy-button {
+        padding: 4px 10px;
+        font-size: 10px;
+        margin-left: 10px;
+    }
+
+    .hero-content h1 {
+        font-size: 20px;
+    }
+
+    .hero-content h2 {
+        font-size: 56px;
+        /* Ajustar el tamaño del h2 para pantallas más pequeñas */
+    }
+
+    .hero-background-image {
+        /* Ajustes para la imagen en pantallas más pequeñas */
+        background-position: center bottom;
+        /* Podría funcionar mejor en móviles */
+        height: 80%;
+        /* O ajusta según cómo se vea mejor */
+        /* Asegúrate de que la imagen no sea demasiado grande y se salga por los lados */
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar-right {
+        display: none;
+    }
+
+    .navbar-left {
+        width: 100%;
+        text-align: center;
+    }
+
+    .hero-content h2 {
+        font-size: 40px;
+        /* Más pequeño para móviles */
+    }
+
+    .hero-background-image {
+        /* Más ajustes para la imagen en móviles */
+        background-position: center bottom;
+        /* O ajusta a tus necesidades */
+        height: 70%;
+    }
+}
+
+
+/* Video Text Section */
+.video-text-section {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    /* Ocupa el 100% del alto de la ventana */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    /* Asegura que el video no se desborde */
+    background-color: #000;
+    /* Color de respaldo si el video no carga */
+}
+
+.background-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: 1;
+    /* Detrás del texto */
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    /* Asegura que el video cubra todo el contenedor */
+}
+
+.text-overlay {
+    position: relative;
+    /* Para que el z-index funcione en algunos navegadores */
+    /* Encima del video */
+    z-index: 2;
+    text-align: left;
+    height: 100%;
+    /* Ancho máximo para el texto */
+    padding: 3rem 20px;
+    /* Padding para evitar que el texto toque los bordes */
+}
+
+.text-overlay .animated-line {
+    font-size: 4vw;
+    /* Tamaño de fuente relativo al viewport width */
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.4);
+    /* Color inicial gris claro/semi-transparente */
+    opacity: 0.4;
+    /* Opacidad inicial */
+    line-height: 1.2;
+    margin-bottom: 5px;
+    /* Espacio entre líneas */
+    will-change: color, opacity;
+    font-family: 'PingFangSCLight', sans-serif;
+    /* Sugerencia para el navegador para optimizar animaciones */
+}
+
+/* Ajustes de fuente para pantallas más pequeñas para la sección de video */
+@media (max-width: 1200px) {
+    .text-overlay .animated-line {
+        font-size: 6vw;
+    }
+}
+
+@media (max-width: 768px) {
+    .text-overlay .animated-line {
+        font-size: 7vw;
+        /* Aumenta el tamaño de la fuente para que se vea bien en móviles */
+    }
+}
+
+@media (max-width: 480px) {
+    .text-overlay .animated-line {
+        font-size: 8vw;
+    }
+}
+
+/* Phone Split Section */
+.phone-split-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f5f5f7;
+    overflow: hidden;
+}
+
+.phone-content-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 70%;
+    max-width: 1000px;
+}
+
+.phone-container {
+    position: absolute;
+    display: flex;
+    /* CAMBIO: Ya no centramos el contenido del phone-container aquí verticalmente,
+       porque el texto va al lado de la imagen */
+    /* REMOVED: justify-content: center; */
+    align-items: center;
+    /* Centrar items horizontalmente (imagen y texto) */
+    text-align: center;
+    /* Para el texto dentro de phone-info, si es multilínea */
+    /* REMOVED: padding: 20px; */
+    /* El padding puede causar problemas con el tamaño */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50vw;
+    /* Ajusta este valor si tus imágenes son más grandes/pequeñas */
+    max-width: 350px;
+    /* Tamaño máximo para cada teléfono */
+}
+
+.phone-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    /* Para que la imagen del teléfono se ajuste bien */
+    flex-shrink: 0;
+    /* Evitar que la imagen se encoja si el texto es muy largo */
+}
+
+/* Ajustes específicos para que uno esté un poco más atrás */
+/* Asegúrate que z-index sea apropiado si tus imágenes se superponen */
+.phone-image-normal {
+    transform: scale(0.9);
+    z-index: 2;
+    margin-top: 70px;
+}
+
+.phone-image-max {
+    transform: scale(1);
+    z-index: 1;
+}
+
+/* CAMBIOS EN .phone-info */
+.phone-info {
+    position: absolute;
+    /* Para posicionarlo con respecto al .phone-container */
+    opacity: 0;
+    /* Opacidad inicial para la animación */
+    font-family: 'PingFangSCLight', sans-serif;
+    /* Color por defecto */
+    font-size: 19px;
+    /* Tamaño base para ambos textos */
+    white-space: nowrap;
+    /* Evita que el texto se rompa en varias líneas */
+    text-align: left;
+    /* Alineación del texto dentro de phone-info */
+    z-index: 15;
+    /* Asegura que el texto esté sobre el teléfono si se superponen */
+    pointer-events: none;
+    /* Para que no interfiera con clics en los teléfonos */
+}
+
+.left-phone .phone-info {
+    /* Para el texto del teléfono izquierdo */
+    left: 0;
+    /* Alineado a la izquierda del phone-container */
+    transform: translateX(-100%) translateX(-20px);
+    /* Moverlo a la izquierda y un poco más */
+    /* -100% lo mueve a la izquierda de su propio ancho. -20px es un margen adicional */
+    text-align: right;
+    /* Alineación del texto para el lado izquierdo */
+    padding-right: 20px;
+    /* Un poco de padding a la derecha */
+}
+
+.right-phone .phone-info {
+    /* Para el texto del teléfono derecho */
+    right: 0;
+    /* Alineado a la derecha del phone-container */
+    transform: translateX(100%) translateX(20px);
+    /* Moverlo a la derecha y un poco más */
+    /* 100% lo mueve a la derecha de su propio ancho. 20px es un margen adicional */
+    text-align: left;
+    /* Alineación del texto para el lado derecho */
+    padding-left: 20px;
+    /* Un poco de padding a la izquierda */
+}
+
+
+.phone-info .phone-model {
+    font-weight: 600;
+}
+
+.phone-info .phone-size {
+    font-size: 40px;
+    /* Tamaño más grande para las pulgadas */
+    font-weight: 800;
+}
+
+.section-tagline {
+    font-size: 1.2vw;
+    font-weight: 600;
+    margin-top: 20px;
+    z-index: 10;
+}
+
+/* Media Queries para la sección de teléfonos (ajustes adicionales) */
+@media (max-width: 1024px) {
+    .phone-container {
+        width: 60vw;
+        max-width: 350px;
+    }
+
+    .phone-info {
+        font-size: 2vw;
+    }
+
+    .phone-info .phone-size {
+        font-size: 3.5vw;
+    }
+
+    .left-phone .phone-info {
+        transform: translateX(-100%) translateX(-10px);
+    }
+
+    .right-phone .phone-info {
+        transform: translateX(100%) translateX(10px);
+    }
+
+    .section-tagline {
+        font-size: 1.5vw;
+    }
+}
+
+@media (max-width: 768px) {
+    .phone-split-section {
+        height: 80vh;
+    }
+
+    .phone-container {
+        width: 80vw;
+        max-width: 300px;
+    }
+
+    /* En móviles, quizás queramos el texto encima o debajo, no al lado si no hay espacio */
+    .phone-info {
+        position: relative;
+        /* Cambiar a relativo para que fluya con el contenido */
+        transform: none !important;
+        /* Resetear transform para posicionamiento normal */
+        left: auto !important;
+        right: auto !important;
+        top: auto !important;
+        padding: 0;
+        margin-top: 10px;
+        /* Espacio entre imagen y texto */
+        text-align: center;
+        /* Centrar texto en móviles */
+    }
+
+    .phone-container {
+        flex-direction: column;
+        /* Apilar imagen y texto verticalmente */
+        justify-content: flex-start;
+        /* Alinear al inicio */
+    }
+
+    .phone-info .phone-model {
+        font-size: 3vw;
+    }
+
+    .phone-info .phone-size {
+        font-size: 5vw;
+    }
+
+    .section-tagline {
+        font-size: 2vw;
+        margin-top: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .phone-split-section {
+        height: 70vh;
+    }
+
+    .phone-container {
+        width: 90vw;
+        max-width: 250px;
+    }
+
+    .phone-info .phone-model {
+        font-size: 4vw;
+    }
+
+    .phone-info .phone-size {
+        font-size: 7vw;
+    }
+
+    .section-tagline {
+        font-size: 3vw;
+        margin-top: 20px;
+    }
+}
+
+/* Color Carousel Section */
+.color-carousel-section {
+    display: flex;
+    min-height: 100%;
+    width: 100%;
+    background-color: #f5f5f7;
+}
+
+.color-carousel-left {
+    flex: 1;
+    /* Ocupa la mitad del ancho */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px;
+    position: relative;
+    overflow: hidden;
+    /* Para contener las imágenes de forma limpia */
+}
+
+.color-carousel-right {
+    flex: 1;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Contenedor de la imagen del iPhone normal (izquierda) */
+.iphone-display-container {
+    position: relative;
+    width: 100%;
+    /* Ocupa el 100% del ancho disponible en su columna */
+    max-width: 400px;
+    /* Limita el ancho máximo para la imagen del teléfono normal */
+    height: 60vh;
+    /* Altura para el contenedor de la imagen, ajusta según sea necesario */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Contenedor de la imagen del iPhone con zoom (derecha) */
+.iphone-zoom-container {
+    position: relative;
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    align-items: end;
+    right: -15%;
+}
+
+/* Estilos comunes para ambas imágenes (opacidad y transición) */
+.color-iphone-image,
+.color-iphone-zoom-image {
+    position: absolute;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    will-change: opacity;
+}
+
+/* Estilos específicos para la imagen del iPhone normal (izquierda) */
+.color-iphone-image {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+    /* Mantiene la proporción y ajusta dentro del contenedor */
+}
+
+/* Estilos específicos para la imagen del iPhone con zoom (derecha) */
+.color-iphone-zoom-image {
+    max-height: 100%;
+    /* Ocupa la altura máxima del contenedor */
+    max-width: 100%;
+    /* Ocupa el ancho máximo del contenedor */
+    object-fit: cover;
+    /* **CAMBIO: Usa cover para que la imagen cubra todo el espacio, recortando si es necesario** */
+    /* Puedes ajustar transform: scale() o top/left si necesitas un posicionamiento más fino
+       para la parte del zoom que quieres mostrar. */
+    /* Por ejemplo, si la imagen es mucho más grande que el contenedor y quieres ver una parte específica: */
+    /* object-position: 20% 50%; */
+    /* Ajusta el punto de enfoque del 'cover' */
+}
+
+.color-iphone-image.active,
+.color-iphone-zoom-image.active {
+    opacity: 1;
+}
+
+.color-options {
+    display: flex;
+    gap: 15px;
+    /* Espacio entre los dots */
+    margin-top: 30px;
+    z-index: 2;
+    /* Asegura que estén por encima de las imágenes */
+}
+
+.color-dot {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    /* Borde sutil */
+    cursor: pointer;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.color-dot:hover {
+    transform: scale(1.1);
+}
+
+.color-dot.active {
+    border-color: #007aff;
+    /* Borde azul para el dot activo */
+    transform: scale(1.05);
+    /* Ligeramente más grande */
+}
+
+.selected-color-name {
+    margin-top: 15px;
+    font-size: 18px;
+    font-weight: 500;
+    color: #333;
+    position: relative;
+    /* Para el underline pseudo-elemento */
+}
+
+/* Pseudo-elemento para el underline del texto */
+.selected-color-name::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -5px;
+    /* Ajusta la distancia del underline */
+    width: 0;
+    /* Ancho inicial 0 para animarlo */
+    height: 2px;
+    background-color: #333;
+    /* Color del underline */
+    transition: width 0.3s ease;
+    /* Animación del ancho */
+}
+
+.selected-color-name.underline::after {
+    width: 100%;
+    /* Ancho completo cuando tiene la clase 'underline' */
+}
+
+
+/* Media Queries para la sección del carrusel (ajustes adicionales) */
+@media (max-width: 768px) {
+    .color-carousel-section {
+        flex-direction: column;
+        min-height: auto;
+    }
+
+    .color-carousel-left,
+    .color-carousel-right {
+        flex: none;
+        width: 100%;
+        height: auto;
+        padding: 30px 15px;
+    }
+
+    /* Ajustes específicos para móviles */
+    .iphone-display-container {
+        height: 50vh;
+        /* Ajusta la altura de la imagen normal en móvil */
+        max-width: 300px;
+        /* Limita el ancho del teléfono en móvil */
+    }
+
+    .iphone-zoom-container {
+        height: 50vh;
+        /* Ajusta la altura de la imagen de zoom en móvil */
+        max-width: none;
+        /* Permite que ocupe todo el ancho disponible */
+    }
+
+    .color-options {
+        margin-top: 20px;
+        gap: 10px;
+    }
+
+    .color-dot {
+        width: 20px;
+        height: 20px;
+    }
+
+    .selected-color-name {
+        font-size: 16px;
+        margin-top: 10px;
+    }
+}
+
+
+/* Side Panel Section */
+.side-panel-section {
+    display: flex;
+    height: 100vh;
+    /* Asegura que la sección sea al menos del alto de la ventana */
+    width: 100%;
+}
+
+.side-panel-left {
+    flex: 1;
+    /* Ocupa la mitad del ancho */
+    background-color: #000;
+    /* Fondo negro */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    /* Para contener la imagen de zoom */
+    padding: 20px;
+    /* Un poco de padding si la imagen no va al borde */
+}
+
+.side-panel-right {
+    flex: 1;
+    /* Ocupa la otra mitad del ancho */
+    background-color: #fff;
+    /* Fondo blanco */
+    display: flex;
+    flex-direction: column;
+    /* Para apilar la imagen y el texto */
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    /* Para que las transformaciones 3D se comporten bien */
+    /* Importante para 3D transformations */
+    perspective: 1000px;
+    /* Crea el contexto 3D para los hijos */
+}
+
+.side-panel-zoom-image {
+    max-width: 100%;
+    /* Asegura que la imagen no se desborde */
+    max-height: 100%;
+    object-fit: contain;
+    /* O 'cover' si quieres que llene el espacio */
+    display: block;
+    /* Elimina espacio extra debajo de la imagen */
+}
+
+.side-panel-image {
+    max-width: 80%;
+    /* Ajusta el tamaño de la imagen del lado */
+    height: 80%;
+    display: block;
+    margin-bottom: 30px;
+    /* Espacio entre la imagen y el texto */
+
+    /* Propiedades para el efecto 3D */
+    transition: transform 0.5s ease-out;
+    /* Transición suave para el hover */
+    transform-style: preserve-3d;
+    /* Importante para que los hijos mantengan su posición 3D */
+    will-change: transform;
+    /* Sugerencia al navegador para optimizar */
+}
+
+.side-panel-text {
+    font-size: 1vw;
+    /* Ajusta el tamaño de la fuente */
+    font-family: 'PingFangSCLight', sans-serif;
+    font-weight: 600;
+    text-align: center;
+    line-height: 1.3;
+}
+
+/* Media Queries para la sección de Paneles Laterales */
+@media (max-width: 768px) {
+    .side-panel-section {
+        flex-direction: column;
+        /* Apila las columnas en móviles */
+    }
+
+    .side-panel-left,
+    .side-panel-right {
+        flex: none;
+        width: 100%;
+        height: 50vh;
+        /* Cada columna ocupa la mitad del alto en móvil */
+        padding: 20px 15px;
+    }
+
+    .side-panel-image {
+        max-width: 60%;
+        /* Ajusta el tamaño de la imagen en móviles */
+        margin-bottom: 20px;
+    }
+
+    .side-panel-text {
+        font-size: 4vw;
+        /* Ajusta el tamaño de la fuente para móviles */
+    }
+}
+
+@media (max-width: 480px) {
+
+    .side-panel-left,
+    .side-panel-right {
+        height: 40vh;
+        /* Ajuste para pantallas más pequeñas */
+    }
+
+    .side-panel-text {
+        font-size: 5vw;
+    }
+}
+
+/* Ceramic Shield Section */
+.ceramic-shield-section {
+    display: flex;
+    min-height: 100vh;
+    /* Asegura que la sección sea al menos del alto de la ventana */
+    width: 100%;
+}
+
+.ceramic-shield-left {
+    flex: 1;
+    /* Ocupa la mitad del ancho */
+    background-color: #f5f5f7;
+    /* Fondo gris claro/blanco */
+    display: flex;
+    flex-direction: column;
+    /* Para apilar la imagen y el texto */
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    overflow: hidden;
+    /* Para contener la imagen de forma limpia */
+}
+
+.ceramic-shield-right {
+    flex: 1;
+    /* Ocupa la otra mitad del ancho */
+    background-color: #000;
+    /* Fondo negro */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    /* Para contener la imagen de zoom */
+    /* Un poco de padding si la imagen no va al borde */
+}
+
+.ceramic-iphone-image {
+    max-width: 80%;
+    /* Ajusta el tamaño de la imagen del iPhone en la izquierda */
+    height: auto;
+    display: block;
+    object-fit: contain;
+    /* Mantiene la proporción y ajusta dentro del contenedor */
+    margin-bottom: 30px;
+    /* Espacio entre la imagen y el texto */
+}
+
+.ceramic-shield-zoom-image {
+    max-width: 100%;
+    /* La imagen de zoom ocupa el 100% de su contenedor */
+    max-height: 100%;
+    object-fit: cover;
+    /* **Clave:** Cubre el contenedor, recortando si es necesario */
+    /* Puedes ajustar object-position si necesitas enfocar una parte específica */
+    /* object-position: center center; */
+    display: block;
+}
+
+.ceramic-shield-text {
+    font-size: 1vw;
+    /* Ajusta el tamaño de la fuente */
+    font-weight: 600;
+    text-align: center;
+    font-family: 'PingFangSCLight', sans-serif;
+    line-height: 1.3;
+}
+
+/* Media Queries para la sección de Ceramic Shield */
+@media (max-width: 768px) {
+    .ceramic-shield-section {
+        flex-direction: column;
+        /* Apila las columnas en móviles */
+    }
+
+    .ceramic-shield-left,
+    .ceramic-shield-right {
+        flex: none;
+        width: 100%;
+        height: 50vh;
+        /* Cada columna ocupa la mitad del alto en móvil */
+        padding: 30px 15px;
+    }
+
+    .ceramic-iphone-image {
+        max-width: 60%;
+        /* Ajusta el tamaño de la imagen del iPhone en móviles */
+        margin-bottom: 20px;
+    }
+
+    .ceramic-shield-text {
+        font-size: 4vw;
+        /* Ajusta el tamaño de la fuente para móviles */
+    }
+}
+
+@media (max-width: 480px) {
+
+    .ceramic-shield-left,
+    .ceramic-shield-right {
+        height: 40vh;
+        /* Ajuste para pantallas más pequeñas */
+    }
+
+    .ceramic-shield-text {
+        font-size: 5vw;
+    }
+}
+
+/* Video Frame Section */
+.video-frame-section {
+    position: relative;
+    width: 100%;
+    min-height: 200vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    color: #fff;
+}
+
+.video-frame-container {
+    position: sticky;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transform-origin: center center;
+    z-index: 5;
+    /* transition: all 0.1s linear; */
+    /* DESACTIVAR o remover esta transición si existe. GSAP se encarga de esto. */
+}
+
+
+.cinematic-video {
+    width: 110%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    position: absolute;
+    z-index: 2;
+}
+
+.iphone-frame-image {
+    position: absolute;
+    /* Para superponerlo detrás del video */
+    width: 60%;
+    /* Tamaño inicial del marco, ajusta según el tamaño final del video */
+    height: auto;
+    object-fit: contain;
+    z-index: 1;
+    /* Detrás del video, pero visible cuando el video se encoge */
+    /* Asegúrate de que la imagen del marco tenga transparencia en la pantalla */
+}
+
+/* Opcional: Estilos para el contenido de texto debajo del video */
+.video-section-content {
+    position: relative;
+    /* Para que sea parte del flujo normal y aparezca debajo del pinned video */
+    text-align: center;
+    padding: 50px 20px;
+    margin-top: 100vh;
+    /* Empieza después de la altura inicial del viewport del video */
+    z-index: 10;
+    /* Asegura que el texto esté por encima de todo */
+}
+
+.video-section-content h2 {
+    font-size: 3.5vw;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.video-section-content p {
+    font-size: 1.5vw;
+    margin-bottom: 30px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.learn-more-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007aff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 25px;
+    font-size: 1vw;
+    transition: background-color 0.3s ease;
+}
+
+.learn-more-btn:hover {
+    background-color: #005bb5;
+}
+
+
+/* Media Queries para la sección del video con marco */
+@media (max-width: 1024px) {
+    .video-section-content h2 {
+        font-size: 4.5vw;
+    }
+
+    .video-section-content p {
+        font-size: 2vw;
+    }
+
+    .learn-more-btn {
+        font-size: 1.5vw;
+    }
+}
+
+@media (max-width: 768px) {
+    .video-frame-section {
+        min-height: 150vh;
+        /* Ajuste para móviles */
+        padding-top: 3vh;
+    }
+
+    .video-frame-container {
+        width: 100vw;
+        height: 60vh;
+        /* Menos altura para el pinning en móvil */
+    }
+
+    .iphone-frame-image {
+        width: 80%;
+        /* Marco más grande en móvil */
+    }
+
+    .video-section-content {
+        margin-top: 60vh;
+        /* Ajuste el margen superior en móvil */
+        padding: 30px 15px;
+    }
+
+    .video-section-content h2 {
+        font-size: 6vw;
+    }
+
+    .video-section-content p {
+        font-size: 3vw;
+    }
+
+    .learn-more-btn {
+        font-size: 2.5vw;
+    }
+}
+
+@media (max-width: 480px) {
+    .video-frame-section {
+        min-height: 120vh;
+    }
+
+    .video-frame-container {
+        height: 50vh;
+    }
+
+    .video-section-content {
+        margin-top: 50vh;
+    }
+
+    .video-section-content h2 {
+        font-size: 8vw;
+    }
+
+    .video-section-content p {
+        font-size: 4vw;
+    }
+
+    .learn-more-btn {
+        font-size: 3vw;
+    }
+}
+
+/* Cinematic Info Section */
+.cinematic-info-section {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    /* Alinea los ítems en la parte superior */
+    padding: 100px 5%;
+    /* Ajusta el padding según sea necesario */
+    background-color: #f5f5f7;
+    /* Fondo claro */
+    gap: 5%;
+    margin-top: -10rem;
+    /* Espacio entre las columnas */
+}
+
+.cinematic-info-left,
+.cinematic-info-right {
+    flex: 1;
+    /* Ocupan el mismo ancho */
+    max-width: 500px;
+    font-family: 'PingFangSCLight', sans-serif;
+    /* Limita el ancho para mejor legibilidad */
+}
+
+.cinematic-info-left p {
+    font-size: 1.2vw;
+    line-height: 1.6;
+    color: #333;
+    padding-right: 20px;
+    /* Un poco de espacio si la derecha tiene borde */
+}
+
+.cinematic-info-right ul {
+    list-style: none;
+    /* Quita los bullets por defecto */
+    padding: 0;
+    margin: 0;
+}
+
+.cinematic-info-right li {
+    font-size: 1.5vw;
+    /* Texto de la lista más grande */
+    font-weight: 500;
+    line-height: 1.4;
+    color: #333;
+    margin-bottom: 20px;
+    /* Espacio entre los ítems de la lista */
+}
+
+/* Cinematicographer CTA Section */
+.cinematographer-cta-section {
+    background-color: #fff;
+    /* Fondo blanco */
+    padding: 100px 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+    /* Altura mínima para centrar el contenido */
+}
+
+.cinematographer-cta-section h2 {
+    font-size: 3.5vw;
+    line-height: 1.2;
+    margin-bottom: 40px;
+    font-family: 'PingFangSCLight', sans-serif;
+    font-weight: 600;
+}
+
+.nerd-out-btn {
+    display: inline-flex;
+    /* Para alinear el texto y el posible icono */
+    align-items: center;
+    font-family: 'PingFangSCLight', sans-serif;
+    justify-content: center;
+    padding: 15px 30px;
+    background-color: #0861bb;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.1vw;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.nerd-out-btn:hover {
+    background-color: #005bb5;
+    transform: translateY(-2px);
+}
+
+/* Footer */
+.main-footer {
+    background-color: #f0f0f0;
+    /* Fondo gris claro */
+    color: #666;
+    padding: 40px 20px;
+    text-align: center;
+    font-size: 0.9em;
+    border-top: 1px solid #e0e0e0;
+}
+
+/* Media Queries para las nuevas secciones y el Footer */
+@media (max-width: 1024px) {
+    .cinematic-info-section {
+        flex-direction: column;
+        /* Apila las columnas */
+        padding: 60px 5%;
+    }
+
+    .cinematic-info-left,
+    .cinematic-info-right {
+        max-width: 100%;
+        /* Ocupan todo el ancho disponible */
+        padding-right: 0;
+        margin-bottom: 30px;
+        /* Espacio entre las secciones apiladas */
+    }
+
+    .cinematic-info-left p {
+        font-size: 1.8vw;
+    }
+
+    .cinematic-info-right li {
+        font-size: 2vw;
+    }
+
+    .cinematographer-cta-section h2 {
+        font-size: 5vw;
+    }
+
+    .nerd-out-btn {
+        font-size: 1.8vw;
+        padding: 12px 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    .cinematic-info-section {
+        padding: 40px 4%;
+    }
+
+    .cinematic-info-left p {
+        font-size: 3.5vw;
+    }
+
+    .cinematic-info-right li {
+        font-size: 4vw;
+    }
+
+    .cinematographer-cta-section h2 {
+        font-size: 7vw;
+    }
+
+    .nerd-out-btn {
+        font-size: 3vw;
+        padding: 10px 20px;
+    }
+
+    .main-footer {
+        padding: 30px 15px;
+        font-size: 0.8em;
+    }
+}
+
+@media (max-width: 480px) {
+    .cinematic-info-section {
+        padding: 30px 3%;
+    }
+
+    .cinematic-info-left p {
+        font-size: 4.5vw;
+    }
+
+    .cinematic-info-right li {
+        font-size: 5vw;
+    }
+
+    .cinematographer-cta-section h2 {
+        font-size: 9vw;
+    }
+
+    .nerd-out-btn {
+        font-size: 4vw;
+        padding: 8px 15px;
+    }
+}
